@@ -1,73 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
     <labels>
-        <fullName>Demo_URL</fullName>
+        <fullName>Dev_Google</fullName>
         <language>en_US</language>
         <protected>true</protected>
-        <shortDescription>Demo_URL</shortDescription>
-        <value>https://www.dev.google.co.in/</value>
+        <shortDescription>Dev Google</shortDescription>
+        <value>https://dev.google.com</value>
     </labels>
     <labels>
-        <fullName>LinkedIn_URL</fullName>
+        <fullName>Dev_MSO</fullName>
         <language>en_US</language>
         <protected>true</protected>
-        <shortDescription>LinkedIn_URL</shortDescription>
-        <value>https://www.dev.linkedin.com/feed</value>
+        <shortDescription>Dev MSO</shortDescription>
+        <value>https://dev.msoorg.com</value>
     </labels>
     <labels>
-        <fullName>TEst</fullName>
+        <fullName>Dev_Yahoo</fullName>
         <language>en_US</language>
         <protected>true</protected>
-        <shortDescription>TEst</shortDescription>
-        <value>asfds</value>
+        <shortDescription>Dev Yahoo</shortDescription>
+        <value>https:dev.yahoo.com</value>
     </labels>
     <labels>
-        <fullName>cp_demo_label_1</fullName>
+        <fullName>Org_URL</fullName>
         <language>en_US</language>
         <protected>true</protected>
-        <shortDescription>cpdemolabel1</shortDescription>
-        <value>Created for Copado Demo</value>
-    </labels>
-    <labels>
-        <fullName>cp_demo_label_2</fullName>
-        <language>en_US</language>
-        <protected>true</protected>
-        <shortDescription>cpdemolabel2</shortDescription>
-        <value>Created for Copado Demo</value>
-    </labels>
-    <labels>
-        <fullName>cp_demo_label_3</fullName>
-        <language>en_US</language>
-        <protected>true</protected>
-        <shortDescription>cpdemolabel3</shortDescription>
-        <value>Created for Copado Demo</value>
-    </labels>
-    <labels>
-        <fullName>cp_demo_label_4</fullName>
-        <language>en_US</language>
-        <protected>true</protected>
-        <shortDescription>cpdemolabel4</shortDescription>
-        <value>Created for Copado Demo</value>
-    </labels>
-    <labels>
-        <fullName>cp_demo_label_5</fullName>
-        <language>en_US</language>
-        <protected>true</protected>
-        <shortDescription>cpdemolabel5</shortDescription>
-        <value>Created for Copado Demo</value>
-    </labels>
-    <labels>
-        <fullName>cp_demo_label_6</fullName>
-        <language>en_US</language>
-        <protected>true</protected>
-        <shortDescription>cpdemolabel6</shortDescription>
-        <value>Created for Copado Demo</value>
-    </labels>
-    <labels>
-        <fullName>cp_demo_label_7</fullName>
-        <language>en_US</language>
-        <protected>true</protected>
-        <shortDescription>cpdemolabel7</shortDescription>
-        <value>Created for Copado Demo</value>
+        <shortDescription>Org URL</shortDescription>
+        <value>https://dinc-dev-ed.develop.my.salesforce.com</value>
     </labels>
 </CustomLabels>

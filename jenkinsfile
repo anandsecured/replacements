@@ -7,6 +7,11 @@ pipeline {
             }
         }
         stage('Check SF version'){
+            agent{
+                docker{
+                    image 'docker pull salesforce/cli:latest-rc-full'
+                }
+            }
         steps{
             script{
                 sh 'sf version'

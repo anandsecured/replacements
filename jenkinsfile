@@ -6,7 +6,7 @@ pipeline {
                 checkout scm
             }
         }
-        stage(Check SF version)
+        stage('Check SF version')
         steps{
             script{
                 sh 'sf version'

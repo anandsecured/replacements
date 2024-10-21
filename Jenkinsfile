@@ -27,13 +27,13 @@ pipeline
                 //checkout scm
                 checkout([
                     $class: 'GitSCM', 
-                    branches: [[name: '${env.BRANCH_NAME}'], [name: 'mfitest1']], 
+                    branches: [[name: '${env.BRANCH_NAME}'], [name: 'uat']], 
                     extensions: scm.extensions + [[$class: 'CloneOption', noTags: true, reference: '', shallow: true, depth:10]], 
                     userRemoteConfigs: [[
-                    url: 'https://hmf.gitlab.otxlab.net/cdo/entapps/sfdc/salesforce.git',
-                    credentialsId: 'GitLab-SFDC-Token',
+                    url: 'https://github.com/anandsecured/replacements.git',
+                    credentialsId: 'Anand_GH_Personal',
                     name: 'origin', 
-                    refspec: '+refs/heads/feature/mfitest1*:refs/remotes/origin/feature/mfitest1* +refs/heads/mfitest1:refs/remotes/origin/mfitest1'
+                    refspec: '+refs/heads/feature/uat*:refs/remotes/origin/feature/uat* +refs/heads/uat:refs/remotes/origin/uat'
                     ]],
                     doGenerateSubmoduleConfigurations: false
                     ])
@@ -43,13 +43,13 @@ pipeline
         
         stage('Login to Org'){
             environment{
-                    SF_KEY = credentials('SF_SBX_SVR_KEY')
+                    SF_KEY = credentials('Anand_Server_Key')
               }
             steps {               
                     script {
                         try {
                             //sh "sfdx auth:sfdxurl:store -f ./config/test1_auth.txt -s"
-                            sh 'sfdx force:auth:jwt:grant --instance-url ${SF_SBX_URL} --client-id ${MFITEST1_CONSUMER_KEY} --username ${MFITST1_USR_NAME} --jwt-key-file ${SF_KEY} -s'
+                            sh 'sfdx force:auth:jwt:grant --instance-url ${SF_PROD_URL} --client-id ${ANR_DInc_Key} --username ${ANR_DInc_UN} --jwt-key-file ${SF_KEY} -s'
                            // sh "sfdx force:org:list"
                         } catch (Exception e) {
                             echo 'Exception occurred: ' + e.toString()
@@ -61,7 +61,7 @@ pipeline
         stage('validate-code'){
             when {     
                 expression {
-                    env.BRANCH_NAME =~ 'feature/mfitest1/*' || env.BRANCH_NAME =~ 'PR-*';
+                    env.BRANCH_NAME =~ 'feature/uat/*';
                 }                
             } 
             steps{
@@ -73,7 +73,7 @@ pipeline
         stage('Deploy to Org'){
             when {     
                 expression {
-                    return env.BRANCH_NAME == 'mfitest1'
+                    return env.BRANCH_NAME == 'uat'
                 }                
             }
             steps{
@@ -81,34 +81,6 @@ pipeline
                 deploy()
             }
 
-        }
-    }
-    post {
-        success {
-            script {
-                def mailRecipients = 'mfi.sfdeploymentteam@microfocus.com'
-                def jobName = currentBuild.fullDisplayName
-                emailext body: '''${SCRIPT, template="groovy-html.template"}''',
-                    mimeType: 'text/html',
-                    subject: "[Jenkins] ${jobName}",
-                    to: "${mailRecipients}",
-                    replyTo: "${mailRecipients}",
-                    recipientProviders: [[$class: 'CulpritsRecipientProvider']]
-             
-                    }
-            }
-
-        failure {
-        script {
-                def mailRecipients = 'mfi.sfdeploymentteam@microfocus.com'
-                def jobName = currentBuild.fullDisplayName
-                emailext body: '''${SCRIPT, template="groovy-html.template"}''',
-                    mimeType: 'text/html',
-                    subject: "[Jenkins] ${jobName}",
-                    to: "${mailRecipients}",
-                    replyTo: "${mailRecipients}",
-                    recipientProviders: [[$class: 'CulpritsRecipientProvider']]
-                }
         }
     }
 }
@@ -121,14 +93,9 @@ def validate(){
     sh "mkdir changes"
     if ( (env.BRANCH_NAME).startsWith('feature') ) {
         echo "**** ALL changed files in Feature Branch ****"
-        sh "git diff --name-only origin/${env.BRANCH_NAME}..origin/mfitest1"
+        sh "git diff --name-only origin/${env.BRANCH_NAME}..origin/uat"
         echo "_____  creating package.xml and destructive changes---------"                            
-        sh "sfdx sgd:source:delta --to 'origin/${env.BRANCH_NAME}' --from 'origin/mfitest1'  --output changes/"
-    }else if( (env.BRANCH_NAME).startsWith('PR') ) {
-        echo "****** Changes from PR *****"
-        sh "git diff --name-only origin/pr/${env.CHANGE_ID}..origin/mfitest1"
-        echo "_____  creating package.xml and destructive changes---------"                            
-        sh "sfdx sgd:source:delta --to 'origin/pr/${env.CHANGE_ID}' --from 'origin/mfitest1'  --output changes/"
+        sh "sfdx sgd:source:delta --to 'origin/${env.BRANCH_NAME}' --from 'origin/uat'  --output changes/"
     }
         
     echo "***  package xml with added modified metadata ****"

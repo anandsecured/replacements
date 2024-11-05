@@ -19,13 +19,13 @@
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>Dev Yahoo</shortDescription>
-        <value>https:dev.yahoo.com</value>
+        <value>https://dev.yahoo.com</value>
     </labels>
     <labels>
         <fullName>Org_URL</fullName>
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>Org URL</shortDescription>
-        <value>https://dinc-dev-ed.develop.my.salesforce.com</value>
+        <value>https://cinc4-dev-ed.develop.my.salesforce.com</value>
     </labels>
 </CustomLabels>

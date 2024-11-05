@@ -75,27 +75,27 @@
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>Dev Google</shortDescription>
-        <value>https://uat.google.com</value>
+        <value>{Dev_Google}</value>
     </labels>
     <labels>
         <fullName>Dev_MSO</fullName>
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>Dev MSO</shortDescription>
-        <value>https://uat.msoorg.com</value>
+        <value>{Dev_MSO}</value>
     </labels>
     <labels>
         <fullName>Dev_Yahoo</fullName>
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>Dev Yahoo</shortDescription>
-        <value>https://uat.yahoo.com</value>
+        <value>{Dev_Yahoo}</value>
     </labels>
     <labels>
         <fullName>Org_URL</fullName>
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>Org URL</shortDescription>
-        <value>https://dinc-dev-ed.develop.my.salesforce.com</value>
+        <value>{Org_URL}</value>
     </labels>
 </CustomLabels>

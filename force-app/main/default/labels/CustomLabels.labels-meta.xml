@@ -5,28 +5,28 @@
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>Dev Google</shortDescription>
-        <value>https://prd.google.com</value>
+        <value>{Dev_Google}</value>
     </labels>
     <labels>
         <fullName>Dev_MSO</fullName>
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>Dev MSO</shortDescription>
-        <value>https://prd.msoorg.com</value>
+        <value>{Dev_MSO}</value>
     </labels>
     <labels>
         <fullName>Dev_Yahoo</fullName>
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>Dev Yahoo</shortDescription>
-        <value>https://prd.yahoo.com</value>
+        <value>{Dev_Yahoo}</value>
     </labels>
     <labels>
         <fullName>Org_URL</fullName>
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>Org URL</shortDescription>
-        <value>https://vinc-dev-ed.my.salesforce.com</value>
+        <value>{Org_URL}</value>
     </labels>
     <labels>
         <fullName>Demo_URL</fullName>

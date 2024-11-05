@@ -70,4 +70,32 @@
         <shortDescription>cpdemolabel7</shortDescription>
         <value>Created for Copado Demo</value>
     </labels>
+        <labels>
+        <fullName>Dev_Google</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Dev Google</shortDescription>
+        <value>https://uat.google.com</value>
+    </labels>
+    <labels>
+        <fullName>Dev_MSO</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Dev MSO</shortDescription>
+        <value>https://uat.msoorg.com</value>
+    </labels>
+    <labels>
+        <fullName>Dev_Yahoo</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Dev Yahoo</shortDescription>
+        <value>https://uat.yahoo.com</value>
+    </labels>
+    <labels>
+        <fullName>Org_URL</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Org URL</shortDescription>
+        <value>https://dinc-dev-ed.develop.my.salesforce.com</value>
+    </labels>
 </CustomLabels>

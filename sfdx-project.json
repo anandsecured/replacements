@@ -9,4 +9,26 @@
   "namespace": "",
   "sfdcLoginUrl": "https://login.salesforce.com",
   "sourceApiVersion": "59.0"
+  "replacements": [
+    {
+      "filename": "force-app/main/default/labels/CustomLabels.labels-meta.xml",
+      "stringToReplace": "{env.Dev_Google}",
+      "replaceWithEnv": "Dev_Google"  
+    },
+    {
+      "filename": "force-app/main/default/labels/CustomLabels.labels-meta.xml",
+      "stringToReplace": "{env.Dev_MSO}",
+      "replaceWithEnv": "Dev_MSO"
+    },
+    {
+      "filename": "force-app/main/default/labels/CustomLabels.labels-meta.xml",
+      "stringToReplace": "{env.Dev_Yahoo}",
+      "replaceWithEnv": "Dev_Yahoo"
+    },
+    {
+      "filename": "force-app/main/default/labels/CustomLabels.labels-meta.xml",
+      "stringToReplace": "{env.Org_URL}",
+      "replaceWithEnv": "Org_URL"
+    }
+  ]
 }

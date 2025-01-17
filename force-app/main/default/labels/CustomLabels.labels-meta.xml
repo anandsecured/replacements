@@ -75,27 +75,27 @@
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>Dev Google</shortDescription>
-        <value>{Dev_Google}</value>
+        <value>{env.Dev_Google}</value>
     </labels>
     <labels>
         <fullName>Dev_MSO</fullName>
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>Dev MSO</shortDescription>
-        <value>{Dev_MSO}</value>
+        <value>{env.Dev_MSO}</value>
     </labels>
     <labels>
         <fullName>Dev_Yahoo</fullName>
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>Dev Yahoo</shortDescription>
-        <value>{Dev_Yahoo}</value>
+        <value>{env.Dev_Yahoo}</value>
     </labels>
     <labels>
         <fullName>Org_URL</fullName>
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>Org URL</shortDescription>
-        <value>{Org_URL}</value>
+        <value>{env.Org_URL}</value>
     </labels>
 </CustomLabels>

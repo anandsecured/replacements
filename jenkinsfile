@@ -91,6 +91,7 @@ def validate(){
     // validation happens only from feature and PR branch, hnce compare these with main branch
     sh "rm -fr changes"
     sh "mkdir changes"
+    
     if ( (env.BRANCH_NAME).startsWith('feature') ) {
         echo "**** ALL changed files in Feature Branch ****"
         sh "git diff --name-only origin/${env.BRANCH_NAME}..origin/dev"
@@ -110,6 +111,7 @@ def validate(){
     echo "Additons ===== ${addSize}"
     if (addSize != 0) {
             echo "***** There are changes in package.xml and validating now ******"
+            sh "source ./env/.env.dev"
             sh "sfdx project deploy start --manifest changes/package/package.xml --dry-run -l NoTestRun --verbose -w 50"
     }
     else {
@@ -153,6 +155,7 @@ def deploy(){
     echo "Additons ===== ${addSize}"
     if (addSize != 0) {
             echo "***** There are changes in package.xml and Deploying now ******"
+            sh "source ./env/.env.dev"
             sh "sfdx project deploy start --manifest changes/package/package.xml -l NoTestRun --verbose -w 50"
     }
     else {

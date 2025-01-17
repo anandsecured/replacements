@@ -28,4 +28,11 @@
         <shortDescription>Org URL</shortDescription>
         <value>{env.Org_URL}</value>
     </labels>
+    <labels>
+        <fullName>cp_demo_label_2</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>cpdemolabel2</shortDescription>
+        <value>Created for Copado Demo</value>
+    </labels>
 </CustomLabels>

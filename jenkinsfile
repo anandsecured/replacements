@@ -155,7 +155,7 @@ def deploy(){
     echo "Additons ===== ${addSize}"
     if (addSize != 0) {
             echo "***** There are changes in package.xml and Deploying now ******"
-            sh "source ./env/.env.dev"
+            sh ". ./env/.env.dev"
             sh "sfdx project deploy start --manifest changes/package/package.xml -l NoTestRun --verbose -w 50"
     }
     else {
